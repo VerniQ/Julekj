@@ -1,0 +1,184 @@
+/* Ogólne style dla całej aplikacji */
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: #f8f8f8; /* Delikatne, jasne tło */
+    /* Dodanie subtelnej tekstury i gradientu */
+    -fx-background-image:
+            radial-gradient(circle at 50% 50%, rgba(230, 230, 230, 0.2) 20%, transparent 20%),
+            linear-gradient(to bottom, rgba(248, 248, 248, 0.8), rgba(220, 220, 220, 0.4));
+    -fx-background-size: auto, 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+/* Style dla menu */
+.menu-bar {
+    -fx-background-color: #e7e7e7; /* Kolor tła menu */
+    -fx-padding: 5px; /* Padding w menu */
+    -fx-border-bottom-color: #d0d0d0; /* Linią oddzielajaca menu od reszty okna */
+    -fx-border-bottom-width: 1px;
+}
+
+.menu .label {
+    -fx-font-size: 14px; /* Rozmiar czcionki w menu */
+    -fx-text-fill: #333333; /* Kolor tekstu w menu */
+}
+
+.menu-item .label {
+    -fx-font-size: 12px; /* Rozmiar czcionki pozycji w menu */
+    -fx-text-fill: #333333;
+}
+
+.menu-item:focused {
+    -fx-background-color: #d0d0d0; /* Kolor tła przy zaznaczeniu pozycji menu */
+}
+
+/* Style dla etykiet */
+.label {
+    -fx-font-size: 14px; /* Ogólny rozmiar czcionki dla etykiet */
+    -fx-text-fill: #333333;
+}
+
+/* Style dla przycisków */
+.button {
+    -fx-background-color: #4CAF50; /* Zielony kolor tła */
+    -fx-text-fill: white; /* Biały kolor tekstu */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-font-size: 14px; /* Rozmiar czcionki */
+    -fx-border-radius: 5px; /* Zaokrąglone rogi */
+    -fx-cursor: hand; /* Kursor dłoni */
+    -fx-border-color: transparent; /* Brak obramowania */
+    -fx-border-width: 0px;
+}
+
+.button:hover {
+    -fx-background-color: #367c39; /* Ciemniejszy zielony kolor tła */
+}
+
+/* Style dla DatePicker */
+.date-picker {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+
+}
+.date-picker .arrow-button {
+    -fx-background-color: #e7e7e7;
+}
+.date-picker .arrow-button:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+.date-picker .text-field {
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1px;
+    -fx-font-size: 14px;
+}
+
+/* Style dla ChoiceBox */
+.choice-box {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+}
+.choice-box .arrow-button {
+    -fx-background-color: #e7e7e7;
+}
+.choice-box .arrow-button:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+.choice-box .text {
+    -fx-font-size: 14px;
+}
+
+/* Style dla TableView */
+.table-view {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1px;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: #d0d0d0; /* Kolor tła nagłówków kolumn */
+}
+.table-view .column-header .label {
+    -fx-text-fill: #333333; /* Kolor tekstu w nagłówkach kolumn */
+    -fx-font-size: 13px;
+}
+.table-view .table-cell {
+    -fx-alignment: CENTER; /* Wyśrodkowanie tekstu w komórkach */
+    -fx-text-fill: #333333; /* Kolor tekstu w komórkach */
+    -fx-font-size: 13px;
+}
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f8f8f8; /* Kolor tła nieparzystych wierszy */
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #f0f0f0; /* Kolor tła parzystych wierszy */
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #c8e1da; /* Kolor tła wybranego wiersza */
+}
+
+/*Style dla ListView */
+.list-view {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1px;
+}
+
+.list-view .list-cell {
+    -fx-padding: 7px;
+    -fx-text-fill: #333333;
+    -fx-font-size: 13px;
+}
+.list-view .list-cell:odd {
+    -fx-background-color: #f8f8f8; /* Kolor tła nieparzystych wierszy */
+}
+
+.list-view .list-cell:even {
+    -fx-background-color: #f0f0f0; /* Kolor tła parzystych wierszy */
+}
+
+.list-view .list-cell:selected{
+    -fx-background-color: #c8e1da; /* Kolor tła wybranego wiersza */
+}
+
+
+/* Style dla LineChart */
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.chart-content {
+    -fx-background-color: #f8f8f8;
+}
+
+
+.chart-vertical-grid-lines{
+    -fx-stroke: #d0d0d0;
+}
+.chart-horizontal-grid-lines{
+    -fx-stroke: #d0d0d0;
+}
+.chart-plot-background {
+    -fx-background-color: #ffffff; /* Kolor tła wykresu */
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1px;
+}
+.axis-label{
+    -fx-text-fill: #333333;
+    -fx-font-size: 13px;
+}
+.axis{
+    -fx-tick-mark-color: #d0d0d0;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ChoiceBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="me.verni.application.ui.ChartController"
+      alignment="TOP_CENTER" spacing="20"
+      prefHeight="400.0" prefWidth="600.0">
+    <padding>
+        <Insets topRightBottomLeft="20"/>
+    </padding>
+    <Label text="Wykres" style="-fx-font-size: 24px;"/>
+    <ChoiceBox fx:id="parameterChoiceBox"/>
+    <LineChart fx:id="numberChart" prefWidth="500" prefHeight="300" >
+        <xAxis>
+            <CategoryAxis fx:id="xAxisNumber"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yNumberAxis"/>
+        </yAxis>
+    </LineChart>
+    <LineChart fx:id="stringChart" prefWidth="500" prefHeight="300" visible="false">
+        <xAxis>
+            <CategoryAxis fx:id="xAxisString"/>
+        </xAxis>
+        <yAxis>
+            <CategoryAxis fx:id="yCategoryAxis"/>
+        </yAxis>
+    </LineChart>
+</VBox>

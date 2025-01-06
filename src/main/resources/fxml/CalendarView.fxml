@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="me.verni.application.ui.CalendarController"
+      alignment="TOP_CENTER" spacing="20"
+      prefHeight="400.0" prefWidth="600.0">
+    <padding>
+        <Insets topRightBottomLeft="20"/>
+    </padding>
+    <Label text="Kalendarz" style="-fx-font-size: 24px;"/>
+    <DatePicker fx:id="datePicker"/>
+    <ListView fx:id="entryListView" prefWidth="500" prefHeight="200"/>
+    <Label fx:id="noEntriesLabel" style="-fx-font-size: 14px;" text="Brak wpisów" visible="false"/>
+</VBox>

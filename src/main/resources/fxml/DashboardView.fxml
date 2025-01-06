@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="me.verni.application.ui.DashboardController"
+      alignment="TOP_CENTER" spacing="20"
+      prefHeight="400.0" prefWidth="600.0">
+    <padding>
+        <Insets topRightBottomLeft="20"/>
+    </padding>
+    <Label fx:id="welcomeLabel" style="-fx-font-size: 24px;"/>
+    <TableView fx:id="tableView">
+        <columns>
+            <TableColumn fx:id="dateColumn" text="Data" prefWidth="80"/>
+            <TableColumn fx:id="timeColumn" text="Godzina" prefWidth="80"/>
+            <TableColumn fx:id="weightColumn" text="Waga" prefWidth="60"/>
+            <TableColumn fx:id="systolicPressureColumn" text="Ciśnienie skurczowe" prefWidth="120"/>
+            <TableColumn fx:id="diastolicPressureColumn" text="Ciśnienie rozkurczowe" prefWidth="120"/>
+            <TableColumn fx:id="moodColumn" text="Samopoczucie" prefWidth="140"/>
+        </columns>
+    </TableView>
+</VBox>
