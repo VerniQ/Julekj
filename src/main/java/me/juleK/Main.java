@@ -1,7 +1,7 @@
-package me.verni;
+package me.juleK;
 
 import javafx.application.Application;
-import me.verni.application.Start;
+import me.juleK.application.Start;
 
 public class Main {
     public static void main(String[] args) {

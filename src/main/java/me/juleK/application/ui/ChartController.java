@@ -1,4 +1,4 @@
-package me.verni.application.ui;
+package me.juleK.application.ui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,9 +8,10 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ChoiceBox;
-import me.verni.application.database.HealthEntry;
-import me.verni.application.database.HealthEntryService;
+import me.juleK.application.database.HealthEntry;
+import me.juleK.application.database.HealthEntryService;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
 
 public class ChartController {
@@ -31,6 +32,7 @@ public class ChartController {
 
     @FXML
     private CategoryAxis yCategoryAxis;
+    HashMap<String, String> translations = new HashMap<>();
 
 
     @FXML
@@ -39,6 +41,11 @@ public class ChartController {
 
     public ChartController() {
         this.healthEntryService = new HealthEntryService();
+        translations.put("weight", "Waga");
+        translations.put("systolicPressure", "Ciśnienie skurczowe");
+        translations.put("diastolicPressure", "Ciśnienie rozkurczowe");
+        translations.put("mood", "Samopoczucie");
+
     }
 
     @FXML
@@ -74,17 +81,17 @@ public class ChartController {
         setupChart();
         switch (selectedParameter) {
             case "weight", "systolicPressure", "diastolicPressure" -> {
-                yNumberAxis.setLabel(selectedParameter);
+                yNumberAxis.setLabel(translations.get(selectedParameter));
                 numberChart.setVisible(true);
                 loadNumericalData(selectedParameter);
             }
             case "mood" -> {
-                yCategoryAxis.setLabel("Samopoczucie");
+                yCategoryAxis.setLabel(translations.get(selectedParameter)); // tłumaczenie
                 stringChart.setVisible(true);
                 loadMoodData();
             }
             default -> {
-                yNumberAxis.setLabel("weight");
+                yNumberAxis.setLabel(translations.get("weight"));
                 numberChart.setVisible(true);
                 loadNumericalData("weight");
             }
@@ -108,7 +115,7 @@ public class ChartController {
             }
             chartData.add(new XYChart.Data<>(date, value));
         }
-        XYChart.Series<String, Number> series = new XYChart.Series<>(selectedParameter, chartData);
+        XYChart.Series<String, Number> series = new XYChart.Series<>(translations.get(selectedParameter), chartData);
         numberChart.getData().add(series);
     }
 
@@ -124,7 +131,7 @@ public class ChartController {
             String mood = entry.getMood();
             chartData.add(new XYChart.Data<>(date, mood));
         }
-        XYChart.Series<String,String> series = new XYChart.Series<>("Samopoczucie", chartData);
+        XYChart.Series<String,String> series = new XYChart.Series<>(translations.get("mood"), chartData);
         stringChart.getData().add(series);
     }
 }

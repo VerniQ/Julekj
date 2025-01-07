@@ -32,7 +32,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("me.verni.Main")
+    mainClass.set("me.juleK.Main")
 }
 
 tasks.withType<Test> {

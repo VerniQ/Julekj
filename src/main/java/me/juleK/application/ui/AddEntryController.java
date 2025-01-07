@@ -1,7 +1,7 @@
-package me.verni.application.ui;
+package me.juleK.application.ui;
 
-import me.verni.application.database.HealthEntry;
-import me.verni.application.database.HealthEntryService;
+import me.juleK.application.database.HealthEntry;
+import me.juleK.application.database.HealthEntryService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

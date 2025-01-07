@@ -1,4 +1,4 @@
-package me.verni.application.database;
+package me.juleK.application.database;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package me.verni.application.database;
+package me.juleK.application.database;
 
-import me.verni.application.util.HibernateUtil;
+import me.juleK.application.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;

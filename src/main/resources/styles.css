@@ -1,70 +1,63 @@
-/* Ogólne style dla całej aplikacji */
+
 .root {
-    -fx-font-family: "Arial", sans-serif;
-    -fx-background-color: #f8f8f8; /* Delikatne, jasne tło */
-    /* Dodanie subtelnej tekstury i gradientu */
-    -fx-background-image:
-            radial-gradient(circle at 50% 50%, rgba(230, 230, 230, 0.2) 20%, transparent 20%),
-            linear-gradient(to bottom, rgba(248, 248, 248, 0.8), rgba(220, 220, 220, 0.4));
+    -fx-font-family: "Arial", "Helvetica", sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #fffef2, #fffdf0);
     -fx-background-size: auto, 100% 100%;
     -fx-background-repeat: no-repeat;
+    -fx-padding: 10px;
 }
 
-/* Style dla menu */
 .menu-bar {
-    -fx-background-color: #e7e7e7; /* Kolor tła menu */
-    -fx-padding: 5px; /* Padding w menu */
-    -fx-border-bottom-color: #d0d0d0; /* Linią oddzielajaca menu od reszty okna */
+    -fx-background-color: #e7e7e7;
+    -fx-padding: 5px;
+    -fx-border-bottom-color: #d0d0d0;
     -fx-border-bottom-width: 1px;
 }
 
-.menu .label {
-    -fx-font-size: 14px; /* Rozmiar czcionki w menu */
-    -fx-text-fill: #333333; /* Kolor tekstu w menu */
-}
-
+.menu .label,
 .menu-item .label {
-    -fx-font-size: 12px; /* Rozmiar czcionki pozycji w menu */
+    -fx-font-size: 14px;
     -fx-text-fill: #333333;
 }
 
 .menu-item:focused {
-    -fx-background-color: #d0d0d0; /* Kolor tła przy zaznaczeniu pozycji menu */
+    -fx-background-color: #d0d0d0;
 }
 
-/* Style dla etykiet */
 .label {
-    -fx-font-size: 14px; /* Ogólny rozmiar czcionki dla etykiet */
+    -fx-font-size: 14px;
     -fx-text-fill: #333333;
 }
 
-/* Style dla przycisków */
 .button {
-    -fx-background-color: #4CAF50; /* Zielony kolor tła */
-    -fx-text-fill: white; /* Biały kolor tekstu */
-    -fx-padding: 10px 20px; /* Padding */
-    -fx-font-size: 14px; /* Rozmiar czcionki */
-    -fx-border-radius: 5px; /* Zaokrąglone rogi */
-    -fx-cursor: hand; /* Kursor dłoni */
-    -fx-border-color: transparent; /* Brak obramowania */
+    -fx-background-color: #5CBF60; /* Łagodnie zielony kolor */
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
     -fx-border-width: 0px;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.07), 2, 0, 0, 1);
+    -fx-transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-    -fx-background-color: #367c39; /* Ciemniejszy zielony kolor tła */
+    -fx-background-color: #4CAF50;
 }
 
-/* Style dla DatePicker */
 .date-picker {
     -fx-background-color: #f0f0f0;
     -fx-border-color: #d0d0d0;
     -fx-border-width: 1px;
     -fx-border-radius: 3px;
-
 }
+
 .date-picker .arrow-button {
     -fx-background-color: #e7e7e7;
 }
+
 .date-picker .arrow-button:hover {
     -fx-background-color: #d0d0d0;
 }
@@ -74,18 +67,20 @@
     -fx-border-color: #d0d0d0;
     -fx-border-width: 1px;
     -fx-font-size: 14px;
+    -fx-text-fill: #333333;
 }
 
-/* Style dla ChoiceBox */
 .choice-box {
     -fx-background-color: #f0f0f0;
     -fx-border-color: #d0d0d0;
     -fx-border-width: 1px;
     -fx-border-radius: 3px;
 }
+
 .choice-box .arrow-button {
     -fx-background-color: #e7e7e7;
 }
+
 .choice-box .arrow-button:hover {
     -fx-background-color: #d0d0d0;
 }
@@ -94,37 +89,39 @@
     -fx-font-size: 14px;
 }
 
-/* Style dla TableView */
 .table-view {
     -fx-background-color: #f0f0f0;
     -fx-border-color: #d0d0d0;
     -fx-border-width: 1px;
 }
+
 .table-view .column-header-background .filler {
-    -fx-background-color: #d0d0d0; /* Kolor tła nagłówków kolumn */
+    -fx-background-color: #d0d0d0;
 }
+
 .table-view .column-header .label {
-    -fx-text-fill: #333333; /* Kolor tekstu w nagłówkach kolumn */
+    -fx-text-fill: #333333;
     -fx-font-size: 13px;
 }
+
 .table-view .table-cell {
-    -fx-alignment: CENTER; /* Wyśrodkowanie tekstu w komórkach */
-    -fx-text-fill: #333333; /* Kolor tekstu w komórkach */
+    -fx-alignment: CENTER;
+    -fx-text-fill: #333333;
     -fx-font-size: 13px;
 }
+
 .table-view .table-row-cell:odd {
-    -fx-background-color: #f8f8f8; /* Kolor tła nieparzystych wierszy */
+    -fx-background-color: #f8f8f8;
 }
 
 .table-view .table-row-cell:even {
-    -fx-background-color: #f0f0f0; /* Kolor tła parzystych wierszy */
+    -fx-background-color: #f0f0f0;
 }
 
 .table-view .table-row-cell:selected {
-    -fx-background-color: #c8e1da; /* Kolor tła wybranego wiersza */
+    -fx-background-color: #c8e1da;
 }
 
-/*Style dla ListView */
 .list-view {
     -fx-background-color: #f0f0f0;
     -fx-border-color: #d0d0d0;
@@ -136,25 +133,25 @@
     -fx-text-fill: #333333;
     -fx-font-size: 13px;
 }
+
 .list-view .list-cell:odd {
-    -fx-background-color: #f8f8f8; /* Kolor tła nieparzystych wierszy */
+    -fx-background-color: #f8f8f8;
 }
 
 .list-view .list-cell:even {
-    -fx-background-color: #f0f0f0; /* Kolor tła parzystych wierszy */
+    -fx-background-color: #f0f0f0;
 }
 
-.list-view .list-cell:selected{
-    -fx-background-color: #c8e1da; /* Kolor tła wybranego wiersza */
+.list-view .list-cell:selected {
+    -fx-background-color: #c8e1da;
 }
 
-
-/* Style dla LineChart */
 .chart-title {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
 }
+
 .chart-plot-background {
     -fx-background-color: transparent;
 }
@@ -163,22 +160,22 @@
     -fx-background-color: #f8f8f8;
 }
 
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: #d0d0d0;
+}
 
-.chart-vertical-grid-lines{
-    -fx-stroke: #d0d0d0;
-}
-.chart-horizontal-grid-lines{
-    -fx-stroke: #d0d0d0;
-}
 .chart-plot-background {
-    -fx-background-color: #ffffff; /* Kolor tła wykresu */
+    -fx-background-color: #ffffff;
     -fx-border-color: #d0d0d0;
     -fx-border-width: 1px;
 }
-.axis-label{
+
+.axis-label {
     -fx-text-fill: #333333;
     -fx-font-size: 13px;
 }
-.axis{
+
+.axis {
     -fx-tick-mark-color: #d0d0d0;
 }

@@ -1,4 +1,4 @@
-package me.verni.application;
+package me.juleK.application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

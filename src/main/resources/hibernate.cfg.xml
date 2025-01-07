@@ -17,7 +17,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
-        <mapping class="me.verni.application.database.HealthEntry"/>
+        <mapping class="me.juleK.application.database.HealthEntry"/>
 
     </session-factory>
 </hibernate-configuration>

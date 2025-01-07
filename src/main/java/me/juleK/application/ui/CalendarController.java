@@ -1,4 +1,4 @@
-package me.verni.application.ui;
+package me.juleK.application.ui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,9 +7,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.VBox;
-import me.verni.application.database.HealthEntry;
-import me.verni.application.database.HealthEntryService;
+import me.juleK.application.database.HealthEntry;
+import me.juleK.application.database.HealthEntryService;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -22,8 +21,6 @@ public class CalendarController {
     @FXML
     private ListView<HealthEntry> entryListView;
 
-    @FXML
-    private VBox detailsContainer;
 
     @FXML
     private Label noEntriesLabel;
@@ -77,7 +74,7 @@ public class CalendarController {
                 if (empty || entry == null) {
                     setText(null);
                 } else {
-                    setText(String.format("Time: %s, Weight: %.2f, Mood: %s", entry.getTime(),entry.getWeight(),entry.getMood()));
+                    setText(String.format("Czas: %s, Waga: %.2f, Samopoczucie: %s", entry.getTime(),entry.getWeight(),entry.getMood()));
                 }
             }
         });

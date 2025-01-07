@@ -1,4 +1,4 @@
-package me.verni.application.ui;
+package me.juleK.application.ui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,8 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import me.verni.application.database.HealthEntry;
-import me.verni.application.database.HealthEntryService;
+import me.juleK.application.database.HealthEntry;
+import me.juleK.application.database.HealthEntryService;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
