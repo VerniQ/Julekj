@@ -21,7 +21,6 @@ public class CalendarController {
     @FXML
     private ListView<HealthEntry> entryListView;
 
-
     @FXML
     private Label noEntriesLabel;
     private final HealthEntryService healthEntryService;
@@ -30,7 +29,6 @@ public class CalendarController {
         this.healthEntryService = new HealthEntryService();
     }
 
-
     @FXML
     public void initialize() {
         setupCalendar();
@@ -38,32 +36,25 @@ public class CalendarController {
     }
 
     private void setupCalendar() {
-        datePicker
-                .valueProperty()
-                .addListener(
-                        (obs, oldDate, newDate) -> {
-                            if (newDate != null) {
-                                showEntriesForDate(newDate);
-                            }
-                        });
+        datePicker.valueProperty().addListener((obs, oldDate, newDate) -> {
+            if (newDate != null) {
+                showEntriesForDate(newDate);
+            }
+        });
 
-        datePicker
-                .setDayCellFactory(
-                        picker ->
-                                new javafx.scene.control.DateCell() {
-                                    @Override
-                                    public void updateItem(LocalDate date, boolean empty) {
-                                        super.updateItem(date, empty);
-                                        if (!empty) {
-                                            List<HealthEntry> entries = healthEntryService.getAllHealthEntries();
-                                            boolean hasEntry =
-                                                    entries.stream().anyMatch(entry -> entry.getDate().isEqual(date));
-                                            if (hasEntry) {
-                                                setStyle("-fx-background-color: #b9e1d2;");
-                                            }
-                                        }
-                                    }
-                                });
+        datePicker.setDayCellFactory(picker -> new javafx.scene.control.DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                if (!empty) {
+                    List<HealthEntry> entries = healthEntryService.getAllHealthEntries();
+                    boolean hasEntry = entries.stream().anyMatch(entry -> entry.getDate().isEqual(date));
+                    if (hasEntry) {
+                        setStyle("-fx-background-color: #b9e1d2;");
+                    }
+                }
+            }
+        });
     }
 
     private void loadEntries() {
@@ -74,7 +65,7 @@ public class CalendarController {
                 if (empty || entry == null) {
                     setText(null);
                 } else {
-                    setText(String.format("Czas: %s, Waga: %.2f, Samopoczucie: %s", entry.getTime(),entry.getWeight(),entry.getMood()));
+                    setText(String.format("Czas: %s, Waga: %.2f, Samopoczucie: %s", entry.getTime(), entry.getWeight(), entry.getMood()));
                 }
             }
         });
@@ -83,18 +74,13 @@ public class CalendarController {
 
     private void showEntriesForDate(LocalDate date) {
         List<HealthEntry> entries = healthEntryService.getAllHealthEntries();
-        List<HealthEntry> filteredEntries =
-                entries.stream()
-                        .filter(entry -> entry.getDate().isEqual(date))
-                        .toList();
+        List<HealthEntry> filteredEntries = entries.stream().filter(entry -> entry.getDate().isEqual(date)).toList();
 
         if (filteredEntries.isEmpty()) {
             entryListView.setVisible(false);
             noEntriesLabel.setVisible(true);
             noEntriesLabel.setText("Brak wpisów dla wybranej daty");
-
-        }
-        else {
+        } else {
             entryListView.setVisible(true);
             noEntriesLabel.setVisible(false);
             ObservableList<HealthEntry> observableEntries = FXCollections.observableArrayList(filteredEntries);
