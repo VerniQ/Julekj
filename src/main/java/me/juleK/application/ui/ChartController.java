@@ -86,7 +86,7 @@ public class ChartController {
                 loadNumericalData(selectedParameter);
             }
             case "mood" -> {
-                yCategoryAxis.setLabel(translations.get(selectedParameter)); // tłumaczenie
+                yCategoryAxis.setLabel(translations.get(selectedParameter));
                 stringChart.setVisible(true);
                 loadMoodData();
             }
